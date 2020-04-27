@@ -13,10 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\screens">
+      <UniqueIdentifier>{6c6da084-fc68-4a76-9efa-9f20f59bd807}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{c04ebae3-3e76-4b6c-9c26-3550036c317f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Knave.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utils\common.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\structs.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\title.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\logo.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\options.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\gameplay.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="screens\ending.h">
+      <Filter>Header Files\screens</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

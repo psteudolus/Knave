@@ -2,35 +2,52 @@
 //
 
 #include <iostream>
-//#include <SDL2/SDL.h>
-#include "flecs.h"
+#include <flecs.h>
+#include "raylib.h"
+#include "utils/structs.h"
+#include "utils/common.h"
 
-/*
-bool init();
+ecs_world_t* screens[knave::SCREEN_COUNT] = { 0 };
 
-bool loadMedia();
+//screens
+#include "screens/logo.h"
+#include "screens/title.h"
+#include "screens/options.h"
+#include "screens/gameplay.h"
+#include "screens/ending.h"
 
-void close();
+knave::game_context_t game_context = { 0 };
 
-SDL_Window* gWindow = NULL;
-
-SDL_Surface* gScreenSurface = NULL;
-
-SDL_Surface* gHelloWorld = NULL;
-*/
 
 int main(int argc, char* argv[]) {
-	ecs_world_t* world = ecs_init_w_args(argc, argv);
-	/* Set target FPS for main loop */
-	ecs_set_target_fps(world, 120);
 
-	printf("Application test_app is running, press CTRL-C to exit...\n");
+	// TODO - Initialize all required variables and load all required data here
+	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "KNAVE");
 
-	/* Run systems */
-	while (ecs_progress(world, 0));
+	for (int i = 0; i < knave::SCREEN_COUNT; i++) {
+		screens[i] = ecs_init_w_args(argc, argv);
+	}
 
-	/* Cleanup */
-	return ecs_fini(world);
+	SetTargetFPS(100);
+
+	game_context = knave::init_game_context();
+
+	knave::logo::init(screens[knave::LOGO], &game_context);
+	knave::title::init(screens[knave::TITLE], &game_context);
+	knave::options::init(screens[knave::OPTIONS], &game_context);
+	knave::gameplay::init(screens[knave::GAMEPLAY], &game_context);
+	knave::ending::init(screens[knave::ENDING], &game_context);
+
+	game_context.world = screens[knave::LOGO];
+
+	while (ecs_progress(game_context.world, 0) && !WindowShouldClose());
+
+	ecs_fini(screens[0]);
+
+	CloseWindow();		// Close window and OpenGL context
+
+	return 0;
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
