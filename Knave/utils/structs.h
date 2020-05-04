@@ -11,17 +11,35 @@ namespace knave {
 		SCREEN_COUNT
 	};
 
-	typedef struct game_context_t {
+	typedef struct GameContext {
 		Vector2 screen_size;
 		Camera3D camera;
 		ecs_world_t* world;
 	} game_context_t;
 
-	typedef struct renderable_t {
-		Vector3 position;
+	/*	this shouldn't be in a single component
+		renderable tagged systems will process entities with the asset componen and position component
+	*/
+
+	//rendering
+
+	/*
+	typedef struct Asset {
+		//Vector3 position;
 		void* asset;
 		int asset_type;
-	} renderable_t;
+	} Asset;
+	*/
+
+	//gameplay
+
+	typedef struct Health {
+		int health;
+	} Health;
+
+	typedef struct Input {
+		//not sure how to structure an input component
+	} Input;
 
 	/*
 	typedef	struct sp_asset_t {

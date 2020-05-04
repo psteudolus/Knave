@@ -4,8 +4,10 @@
 #include <iostream>
 #include <flecs.h>
 #include "raylib.h"
+#include "raymath.h"
 #include "utils/structs.h"
 #include "utils/common.h"
+#include "utils/systems/physics.h"
 
 ecs_world_t* screens[knave::SCREEN_COUNT] = { 0 };
 
@@ -16,14 +18,13 @@ ecs_world_t* screens[knave::SCREEN_COUNT] = { 0 };
 #include "screens/gameplay.h"
 #include "screens/ending.h"
 
-knave::game_context_t game_context = { 0 };
+knave::GameContext game_context = { 0 };
 
 
 int main(int argc, char* argv[]) {
 
 	// TODO - Initialize all required variables and load all required data here
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "KNAVE");
-
 	for (int i = 0; i < knave::SCREEN_COUNT; i++) {
 		screens[i] = ecs_init_w_args(argc, argv);
 	}

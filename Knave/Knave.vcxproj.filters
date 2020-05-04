@@ -19,6 +19,9 @@
     <Filter Include="Header Files\utils">
       <UniqueIdentifier>{c04ebae3-3e76-4b6c-9c26-3550036c317f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\utils\systems">
+      <UniqueIdentifier>{be0b6d08-f124-4333-b351-f590251e3344}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Knave.cpp">
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="screens\ending.h">
       <Filter>Header Files\screens</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\systems\physics.h">
+      <Filter>Header Files\utils\systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

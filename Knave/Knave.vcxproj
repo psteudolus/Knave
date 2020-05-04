@@ -106,6 +106,7 @@
     <ClInclude Include="screens\title.h" />
     <ClInclude Include="utils\common.h" />
     <ClInclude Include="utils\structs.h" />
+    <ClInclude Include="utils\systems\physics.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

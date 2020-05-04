@@ -7,7 +7,7 @@ int frameCount;
 namespace knave {
 	namespace logo {
 		void render(ecs_rows_t* rows) {
-			game_context_t* game_context = (game_context_t*)ecs_get_system_context(rows->world, rows->system);
+			GameContext* game_context = (GameContext*)ecs_get_system_context(rows->world, rows->system);
 			BeginDrawing();
 			ClearBackground(RAYWHITE);
 			DrawText("LOGO SCREEN", 20, 20, 40, LIGHTGRAY);
@@ -17,7 +17,7 @@ namespace knave {
 		}
 
 		void post_render(ecs_rows_t* rows) {
-			game_context_t* game_context = (game_context_t*)ecs_get_system_context(rows->world, rows->system);
+			GameContext* game_context = (GameContext*)ecs_get_system_context(rows->world, rows->system);
 			frameCount++;
 
 			if (frameCount > 500) {
@@ -25,7 +25,7 @@ namespace knave {
 			}
 		}
 
-		void init(ecs_world_t* world, knave::game_context_t* game_context) {
+		void init(ecs_world_t* world, knave::GameContext* game_context) {
 			frameCount = 0;
 
 			ECS_COMPONENT(world, Vector3);

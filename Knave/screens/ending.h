@@ -4,7 +4,7 @@
 namespace knave {
 	namespace ending {
 		void render(ecs_rows_t* rows) {
-			game_context_t* game_context = (game_context_t*)ecs_get_system_context(rows->world, rows->system);
+			GameContext* game_context = (GameContext*)ecs_get_system_context(rows->world, rows->system);
 			BeginDrawing();
 			ClearBackground(RAYWHITE);
 			DrawRectangle(0, 0, GetScreenWidth(), GetScreenHeight(), BLUE);
@@ -15,14 +15,14 @@ namespace knave {
 		}
 
 		void post_render(ecs_rows_t* rows) {
-			game_context_t* game_context = (game_context_t*)ecs_get_system_context(rows->world, rows->system);
+			GameContext* game_context = (GameContext*)ecs_get_system_context(rows->world, rows->system);
 
 			if (IsKeyPressed(KEY_ENTER)) {
 				game_context->world = screens[TITLE];
 			}
 		}
 
-		void init(ecs_world_t* world, knave::game_context_t* game_context) {
+		void init(ecs_world_t* world, knave::GameContext* game_context) {
 			ECS_COMPONENT(world, Vector3);
 			ECS_TAG(world, tag_renderable);
 			ECS_TAG(world, tag_ui);

@@ -4,10 +4,10 @@
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 800
 namespace knave {
-	game_context_t init_game_context() {
+	GameContext init_game_context() {
 		printf("Initialization\n");
 
-		game_context_t return_value = { 0 };
+		GameContext return_value = { 0 };
 
 		return_value.screen_size.x = SCREEN_WIDTH;
 		return_value.screen_size.y = SCREEN_HEIGHT;
