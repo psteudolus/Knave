@@ -15,7 +15,7 @@ namespace knave {
 		Vector2 screen_size;
 		Camera3D camera;
 		ecs_world_t* world;
-	} game_context_t;
+	} GameContext;
 
 	/*	this shouldn't be in a single component
 		renderable tagged systems will process entities with the asset componen and position component

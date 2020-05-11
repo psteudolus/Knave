@@ -5,9 +5,11 @@
 #include <flecs.h>
 #include "raylib.h"
 #include "raymath.h"
+#include "rlgl.h"
 #include "utils/structs.h"
 #include "utils/common.h"
 #include "utils/systems/physics.h"
+#include "utils/systems/transform.h"
 
 ecs_world_t* screens[knave::SCREEN_COUNT] = { 0 };
 
@@ -30,6 +32,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	SetTargetFPS(100);
+
 
 	game_context = knave::init_game_context();
 

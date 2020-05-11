@@ -53,5 +53,8 @@
     <ClInclude Include="utils\systems\physics.h">
       <Filter>Header Files\utils\systems</Filter>
     </ClInclude>
+    <ClInclude Include="utils\systems\transform.h">
+      <Filter>Header Files\utils\systems</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
